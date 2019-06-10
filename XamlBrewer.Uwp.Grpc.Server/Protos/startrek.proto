@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package Startrek;
+
+//
+service Transporter {
+  //
+  rpc BeamUp(Location) returns (LifeForm) {}
+
+  //
+  rpc BeamUpParty(Location) returns (stream LifeForm) {}
+
+  //
+  rpc BeamDown(LifeForm) returns (Location) {}
+
+  //
+  rpc BeamDownParty(stream LifeForm) returns (Location) {} 
+
+  //
+  rpc Lock(Location) returns (Location) {}
+}
+
+//
+message LifeForm {
+  string species = 1;
+  string name = 2;
+  string rank = 3;
+}
+
+//
+message Location {
+  string description = 1;
+}
