@@ -2,6 +2,7 @@
 using Startrek;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.UI;
 using Windows.UI.ViewManagement;
@@ -38,11 +39,19 @@ namespace XamlBrewer.Uwp.Grpc.Client
             Loaded += MainPage_Loaded;
         }
 
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            // Just to get rid of the async warning.
+            await Task.Delay(0);
+
             WriteLog("Transporter Room Panel Startup.");
             WriteLog("- Openening a channel.");
             _channel = new Channel("localhost:50051", ChannelCredentials.Insecure);
+
+            // Optional: deadline.
+            // Uncomment the delay in Server Program.cs to test this.
+            // await _channel.ConnectAsync(deadline: DateTime.UtcNow.AddSeconds(2));
+
             WriteLog("- Channel open.");
 
             _client = new TransporterClient(_channel);
@@ -81,7 +90,7 @@ namespace XamlBrewer.Uwp.Grpc.Client
             WriteLog($"- Party beamed up.");
         }
 
-        private void BeamDownOne_Click(object sender, RoutedEventArgs e)
+        private async void BeamDownOne_Click(object sender, RoutedEventArgs e)
         {
             var whoEver = Data.LifeForms.WhoEver();
             var lifeForm = new LifeForm
@@ -91,7 +100,9 @@ namespace XamlBrewer.Uwp.Grpc.Client
                 Rank = whoEver.Item3
             };
 
-            var location = _client.BeamDown(lifeForm);
+            // var location = _client.BeamDown(lifeForm);
+            // Uncomment the delay in the Service method to test the deadline.
+            var location = await _client.BeamDownAsync(lifeForm, deadline: DateTime.UtcNow.AddSeconds(5));
 
             WriteLog($"Beamed down {lifeForm.Rank} {lifeForm.Name} ({lifeForm.Species}) to {location.Description}.");
         }

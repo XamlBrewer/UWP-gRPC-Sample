@@ -51,6 +51,9 @@ namespace XamlBrewer.Uwp.Grpc.Server
 
         public override Task<Location> BeamDown(LifeForm request, ServerCallContext context)
         {
+            // Uncomment to test the client deadline.
+            // Task.Delay(60000).Wait();
+
             return Task.FromResult(new Location
             {
                 Description = Data.Locations.WhereEver()

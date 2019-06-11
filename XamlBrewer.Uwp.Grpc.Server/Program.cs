@@ -12,6 +12,9 @@ namespace XamlBrewer.Uwp.Grpc.Server
     {
         public static void Main(string[] args)
         {
+            // Uncomment to test the channel creation deadline.
+            // Task.Delay(6000).Wait();
+
             CreateHostBuilder(args).Build().Run();
         }
 
