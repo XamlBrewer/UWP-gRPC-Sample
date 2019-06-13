@@ -115,14 +115,18 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\XamlBrewer.Uwp.Grpc.Console\Generated\Startrek.cs">
+      <Link>Pregenerated gRPC Client Stubs\Startrek.cs</Link>
+    </Compile>
+    <Compile Include="..\XamlBrewer.Uwp.Grpc.Console\Generated\StartrekGrpc.cs">
+      <Link>Pregenerated gRPC Client Stubs\StartrekGrpc.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pregenerated gRPC Client Stubs\Startrek.cs" />
-    <Compile Include="Pregenerated gRPC Client Stubs\StartrekGrpc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Background.jpg" />
-    <Content Include="Pregenerated gRPC Client Stubs\ReadMe.txt" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -141,6 +144,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Protos\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

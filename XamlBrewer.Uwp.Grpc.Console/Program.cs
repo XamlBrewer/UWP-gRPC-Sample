@@ -6,6 +6,7 @@ namespace XamlBrewer.Uwp.Grpc
     {
         static void Main(string[] args)
         {
+            var x = new Startrek.LifeForm();
             Console.WriteLine("Hello World!");
         }
     }
