@@ -2,32 +2,35 @@ syntax = "proto3";
 
 package Startrek;
 
-//
+// Transporter Room API
 service Transporter {
-  //
+  // Beam up a single life form from a location.
   rpc BeamUp(Location) returns (LifeForm) {}
 
-  //
+  // Beam up a party of life forms to a location.
   rpc BeamUpParty(Location) returns (stream LifeForm) {}
 
-  //
+  // Beam down a single life form, and return the location.
   rpc BeamDown(LifeForm) returns (Location) {}
 
-  //
+  // Beam up a party of life forms, and return the location.
   rpc BeamDownParty(stream LifeForm) returns (Location) {} 
 
-  //
+  // Replace a beamed down party of life forms by another.
+  rpc ReplaceParty(stream LifeForm) returns (stream LifeForm) {}
+
+  // For the sake of completeness: lock the beam to a location.
   rpc Lock(Location) returns (Location) {}
 }
 
-//
+// It's life, Jim, but not as we know it.
 message LifeForm {
   string species = 1;
   string name = 2;
   string rank = 3;
 }
 
-//
+// A place in space.
 message Location {
   string description = 1;
 }

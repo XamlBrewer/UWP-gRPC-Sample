@@ -26,14 +26,15 @@ namespace Startrek {
           string.Concat(
             "Cg5zdGFydHJlay5wcm90bxIIU3RhcnRyZWsiNwoITGlmZUZvcm0SDwoHc3Bl",
             "Y2llcxgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBHJhbmsYAyABKAkiHwoITG9j",
-            "YXRpb24SEwoLZGVzY3JpcHRpb24YASABKAkyoQIKC1RyYW5zcG9ydGVyEjIK",
+            "YXRpb24SEwoLZGVzY3JpcHRpb24YASABKAky3wIKC1RyYW5zcG9ydGVyEjIK",
             "BkJlYW1VcBISLlN0YXJ0cmVrLkxvY2F0aW9uGhIuU3RhcnRyZWsuTGlmZUZv",
             "cm0iABI5CgtCZWFtVXBQYXJ0eRISLlN0YXJ0cmVrLkxvY2F0aW9uGhIuU3Rh",
             "cnRyZWsuTGlmZUZvcm0iADABEjQKCEJlYW1Eb3duEhIuU3RhcnRyZWsuTGlm",
             "ZUZvcm0aEi5TdGFydHJlay5Mb2NhdGlvbiIAEjsKDUJlYW1Eb3duUGFydHkS",
-            "Ei5TdGFydHJlay5MaWZlRm9ybRoSLlN0YXJ0cmVrLkxvY2F0aW9uIgAoARIw",
-            "CgRMb2NrEhIuU3RhcnRyZWsuTG9jYXRpb24aEi5TdGFydHJlay5Mb2NhdGlv",
-            "biIAYgZwcm90bzM="));
+            "Ei5TdGFydHJlay5MaWZlRm9ybRoSLlN0YXJ0cmVrLkxvY2F0aW9uIgAoARI8",
+            "CgxSZXBsYWNlUGFydHkSEi5TdGFydHJlay5MaWZlRm9ybRoSLlN0YXJ0cmVr",
+            "LkxpZmVGb3JtIgAoATABEjAKBExvY2sSEi5TdGFydHJlay5Mb2NhdGlvbhoS",
+            "LlN0YXJ0cmVrLkxvY2F0aW9uIgBiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {

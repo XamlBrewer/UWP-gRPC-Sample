@@ -50,6 +50,9 @@
             <Button Click="BeamDownParty_Click"
                     HorizontalAlignment="Stretch"
                     Margin="12">Party to beam down</Button>
+            <Button Click="ReplaceParty_Click"
+                    HorizontalAlignment="Stretch"
+                    Margin="12">Party to replace</Button>
             <Button Click="CloseChannel_Click"
                     HorizontalAlignment="Stretch"
                     Margin="12">Close channel</Button>            

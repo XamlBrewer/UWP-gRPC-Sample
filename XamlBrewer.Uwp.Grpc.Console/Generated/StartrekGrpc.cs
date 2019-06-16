@@ -45,6 +45,13 @@ namespace Startrek {
         __Marshaller_Startrek_LifeForm,
         __Marshaller_Startrek_Location);
 
+    static readonly grpc::Method<global::Startrek.LifeForm, global::Startrek.LifeForm> __Method_ReplaceParty = new grpc::Method<global::Startrek.LifeForm, global::Startrek.LifeForm>(
+        grpc::MethodType.DuplexStreaming,
+        __ServiceName,
+        "ReplaceParty",
+        __Marshaller_Startrek_LifeForm,
+        __Marshaller_Startrek_LifeForm);
+
     static readonly grpc::Method<global::Startrek.Location, global::Startrek.Location> __Method_Lock = new grpc::Method<global::Startrek.Location, global::Startrek.Location>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -198,6 +205,26 @@ namespace Startrek {
       public virtual grpc::AsyncClientStreamingCall<global::Startrek.LifeForm, global::Startrek.Location> BeamDownParty(grpc::CallOptions options)
       {
         return CallInvoker.AsyncClientStreamingCall(__Method_BeamDownParty, null, options);
+      }
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncDuplexStreamingCall<global::Startrek.LifeForm, global::Startrek.LifeForm> ReplaceParty(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ReplaceParty(new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncDuplexStreamingCall<global::Startrek.LifeForm, global::Startrek.LifeForm> ReplaceParty(grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncDuplexStreamingCall(__Method_ReplaceParty, null, options);
       }
       /// <summary>
       /// </summary>

@@ -72,5 +72,20 @@ namespace XamlBrewer.Uwp.Grpc.Server
                 Description = Data.Locations.WhereEver()
             };
         }
+
+        public async override Task ReplaceParty(IAsyncStreamReader<LifeForm> requestStream, IServerStreamWriter<LifeForm> responseStream, ServerCallContext context)
+        {
+            while (await requestStream.MoveNext())
+            {
+                // var beamedUp = requestStream.Current;
+                var beamDown = Data.LifeForms.WhoEver();
+                await responseStream.WriteAsync(new LifeForm
+                {
+                    Species = beamDown.Item1,
+                    Name = beamDown.Item2,
+                    Rank = beamDown.Item3
+                });
+            }
+        }
     }
 }

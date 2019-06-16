@@ -142,6 +142,53 @@ namespace XamlBrewer.Uwp.Grpc.Client
             }
         }
 
+        private async void ReplaceParty_Click(object sender, RoutedEventArgs e)
+        {
+            // Creating a party.
+            var rnd = _rnd.Next(2, 5);
+            var lifeForms = new List<LifeForm>();
+            for (int i = 0; i < rnd; i++)
+            {
+                var whoEver = Data.LifeForms.WhoEver();
+                var lifeForm = new LifeForm
+                {
+                    Species = whoEver.Item1,
+                    Name = whoEver.Item2,
+                    Rank = whoEver.Item3
+                };
+
+                lifeForms.Add(lifeForm);
+            }
+
+            WriteLog($"Replacing a party.");
+            using (var call = _client.ReplaceParty())
+            {
+                var responseReaderTask = Task.Run(async () =>
+                {
+                    while (await call.ResponseStream.MoveNext())
+                    {
+                        var beamedDown = call.ResponseStream.Current;
+                        await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                        {
+                            WriteLog($"- Beamed down {beamedDown.Rank} {beamedDown.Name} ({beamedDown.Species}).");
+                        });
+                    }
+                });
+
+                foreach (var request in lifeForms)
+                {
+                    await call.RequestStream.WriteAsync(request);
+                    WriteLog($"- Beamed up {request.Rank} {request.Name} ({request.Species}).");
+                };
+
+                await call.RequestStream.CompleteAsync();
+
+                await responseReaderTask;
+            }
+
+            WriteLog($"- Party replaced.");
+        }
+
         private async void CloseChannel_Click(object sender, RoutedEventArgs e)
         {
             WriteLog("Routing all energy to deflector shields.");
@@ -151,7 +198,7 @@ namespace XamlBrewer.Uwp.Grpc.Client
 
         private void WriteLog(string message)
         {
-            Log.Text += message + " (stardate " + Stardate + ")" +Environment.NewLine;
+            Log.Text += message + " (stardate " + Stardate + ")" + Environment.NewLine;
             LogScroll.ChangeView(0, double.MaxValue, 1);
         }
 
