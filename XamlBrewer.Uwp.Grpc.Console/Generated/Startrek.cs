@@ -47,6 +47,7 @@ namespace Startrek {
   }
   #region Messages
   /// <summary>
+  /// It's life, Jim, but not as we know it.
   /// </summary>
   public sealed partial class LifeForm : pb::IMessage<LifeForm> {
     private static readonly pb::MessageParser<LifeForm> _parser = new pb::MessageParser<LifeForm>(() => new LifeForm());
@@ -234,6 +235,7 @@ namespace Startrek {
   }
 
   /// <summary>
+  /// A place in space.
   /// </summary>
   public sealed partial class Location : pb::IMessage<Location> {
     private static readonly pb::MessageParser<Location> _parser = new pb::MessageParser<Location>(() => new Location());

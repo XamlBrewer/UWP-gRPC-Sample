@@ -9,6 +9,7 @@ using grpc = global::Grpc.Core;
 
 namespace Startrek {
   /// <summary>
+  /// Transporter Room API
   /// </summary>
   public static partial class Transporter
   {
@@ -89,6 +90,7 @@ namespace Startrek {
       }
 
       /// <summary>
+      /// Beam up a single life form from a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -100,6 +102,7 @@ namespace Startrek {
         return BeamUp(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// Beam up a single life form from a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -109,6 +112,7 @@ namespace Startrek {
         return CallInvoker.BlockingUnaryCall(__Method_BeamUp, null, options, request);
       }
       /// <summary>
+      /// Beam up a single life form from a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -120,6 +124,7 @@ namespace Startrek {
         return BeamUpAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// Beam up a single life form from a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -129,6 +134,7 @@ namespace Startrek {
         return CallInvoker.AsyncUnaryCall(__Method_BeamUp, null, options, request);
       }
       /// <summary>
+      /// Beam up a party of life forms to a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -140,6 +146,7 @@ namespace Startrek {
         return BeamUpParty(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// Beam up a party of life forms to a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -149,6 +156,7 @@ namespace Startrek {
         return CallInvoker.AsyncServerStreamingCall(__Method_BeamUpParty, null, options, request);
       }
       /// <summary>
+      /// Beam down a single life form, and return the location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -160,6 +168,7 @@ namespace Startrek {
         return BeamDown(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// Beam down a single life form, and return the location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -169,6 +178,7 @@ namespace Startrek {
         return CallInvoker.BlockingUnaryCall(__Method_BeamDown, null, options, request);
       }
       /// <summary>
+      /// Beam down a single life form, and return the location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -180,6 +190,7 @@ namespace Startrek {
         return BeamDownAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// Beam down a single life form, and return the location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -189,6 +200,7 @@ namespace Startrek {
         return CallInvoker.AsyncUnaryCall(__Method_BeamDown, null, options, request);
       }
       /// <summary>
+      /// Beam up a party of life forms, and return the location.
       /// </summary>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
@@ -199,6 +211,7 @@ namespace Startrek {
         return BeamDownParty(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// Beam up a party of life forms, and return the location.
       /// </summary>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
@@ -207,7 +220,7 @@ namespace Startrek {
         return CallInvoker.AsyncClientStreamingCall(__Method_BeamDownParty, null, options);
       }
       /// <summary>
-      /// 
+      /// Replace a beamed down party of life forms by another.
       /// </summary>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
@@ -218,7 +231,7 @@ namespace Startrek {
         return ReplaceParty(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// 
+      /// Replace a beamed down party of life forms by another.
       /// </summary>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
@@ -227,6 +240,7 @@ namespace Startrek {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_ReplaceParty, null, options);
       }
       /// <summary>
+      /// For the sake of completeness: lock the beam to a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -238,6 +252,7 @@ namespace Startrek {
         return Lock(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// For the sake of completeness: lock the beam to a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -247,6 +262,7 @@ namespace Startrek {
         return CallInvoker.BlockingUnaryCall(__Method_Lock, null, options, request);
       }
       /// <summary>
+      /// For the sake of completeness: lock the beam to a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -258,6 +274,7 @@ namespace Startrek {
         return LockAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// For the sake of completeness: lock the beam to a location.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
