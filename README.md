@@ -1,7 +1,9 @@
 ## UWP-gRPC-Sample
-Demonstrates how to create a UWP gRPC client to an ASP.NET Core gRPC server.
-
-Work in progress. We're not done yet.
+Demonstrates how to create a UWP gRPC client to an ASP.NET Core gRPC server:
+* projects setup,
+* service definition,
+* client and server side code generation, and
+* implementation of different types of calls.
 
 ## Screenshots
 Client
@@ -9,6 +11,3 @@ Client
 
 Server
 ![Screenshot](Assets/ServerScreenshot.png?raw=true)
-
-## Configuration
-![Screenshot](Assets/StartupSettings.png?raw=true)
